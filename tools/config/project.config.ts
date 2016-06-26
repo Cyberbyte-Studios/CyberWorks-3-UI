@@ -11,12 +11,24 @@ export class ProjectConfig extends SeedConfig {
 
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
 
+  FONTS_DEST = `${this.APP_DEST}/fonts`;
+  FONTS_SRC = [
+    'node_modules/bootstrap/dist/fonts/**',
+    'node_modules/font-awesome/fonts/**'
+  ];
+
   constructor() {
     super();
-    // this.APP_TITLE = 'Put name of your app here';
+    this.APP_TITLE = 'Cyberworks UI';
     let additional_deps: InjectableDependency[] = [
-      // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
-      // {src: 'lodash/lodash.min.js', inject: 'libs'},
+      {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
+      {src: 'lodash/lodash.min.js', inject: 'libs'},
+      {src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs'},
+      {src: 'bootstrap/dist/css/bootstrap.min.css', inject: true},
+      {src: 'jquery-slimscroll/jquery.slimscroll.min.js', inject: true},
+      {src: 'pace-progress/pace.min.js', inject: true},
+      {src: 'metismenu/dist/metisMenu.min.js', inject: true},
+      {src: 'metismenu/dist/metisMenu.min.css', inject: true},
     ];
 
     const seedDependencies = this.NPM_DEPENDENCIES;
