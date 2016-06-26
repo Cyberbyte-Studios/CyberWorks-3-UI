@@ -1,3 +1,8 @@
-<sd-toolbar></sd-toolbar>
-<sd-navbar></sd-navbar>
-<router-outlet></router-outlet>
+<div id="wrapper">
+    <sd-navigation></sd-navigation>
+    <div id="page-wrapper" class="gray-bg">
+        <sd-topnavbar></sd-topnavbar>
+        <router-outlet></router-outlet>
+        <sd-footer></sd-footer>
+    </div>
+</div>
