@@ -1,4 +1,5 @@
 import { Licence } from "./license";
+import { Gear } from "./gear";
 
 export class Player {
   id: number;
@@ -8,6 +9,9 @@ export class Player {
   bankacc: number;
   coplevel: number;
   mediclevel: number;
+  civ_gear: Gear[];
+  med_gear: Gear[];
+  cop_gear: Gear[];
   civ_licenses: Licence[];
   med_licenses: Licence[];
   cop_licenses: Licence[];
