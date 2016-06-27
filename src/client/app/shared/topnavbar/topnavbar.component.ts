@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-topnavbar',
+  selector: 'cw-topnavbar',
   templateUrl: 'topnavbar.component.html'
 })
 export class TopNavbarComponent {}

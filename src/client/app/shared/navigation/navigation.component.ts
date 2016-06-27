@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES } from "@angular/router";
 
 /**
  * This class represents the navigation bar component.
  */
 @Component({
   moduleId: module.id,
-  selector: 'cw-footer',
-  templateUrl: 'footer.component.html',
+  selector: 'cw-navigation',
+  templateUrl: 'navigation.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
-export class FooterComponent {}
+export class NavigationComponent {}
