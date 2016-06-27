@@ -29,7 +29,7 @@ export class ProjectConfig extends SeedConfig {
       {src: 'pace-progress/pace.min.js', inject: true},
       {src: 'metismenu/dist/metisMenu.min.js', inject: true},
       {src: 'metismenu/dist/metisMenu.min.css', inject: true},
-      {src: 'ng2-charts/node_modules/chart.js/dist/Chart.bundle.min.js', inject: true},
+      {src: 'chart.js/dist/Chart.bundle.min.js', inject: true},
     ];
 
     const seedDependencies = this.NPM_DEPENDENCIES;
