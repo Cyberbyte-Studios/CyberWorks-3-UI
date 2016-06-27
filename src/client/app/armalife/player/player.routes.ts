@@ -1,10 +1,10 @@
 import { RouterConfig } from '@angular/router';
 
-import { LifeDashboardComponent } from './index';
+import { PlayerComponent } from './index';
 
-export const LifeDashboardRoutes: RouterConfig = [
+export const PlayerRoutes: RouterConfig = [
   {
-    path: 'life/dashboard',
-    component: LifeDashboardComponent
+    path: 'life/player/:id',
+    component: PlayerComponent
   },
 ];

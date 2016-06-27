@@ -2,12 +2,13 @@ import { provideRouter, RouterConfig } from '@angular/router';
 
 import { AboutRoutes } from './+about/index';
 import { HomeRoutes } from './+home/index';
-import { LifeDashboardRoutes } from "./armalife/index";
+import { LifeDashboardRoutes, PlayerRoutes } from "./armalife/index";
 
 const routes: RouterConfig = [
   ...HomeRoutes,
   ...AboutRoutes,
   ...LifeDashboardRoutes
+  ...PlayerRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [

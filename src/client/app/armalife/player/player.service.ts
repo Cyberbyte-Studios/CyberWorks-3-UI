@@ -2,19 +2,21 @@ import { Injectable }     from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 
-import { Dashboard } from './dash';
+import { Player } from '../models/player';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
-export class DashboardService {
+export class PlayerService {
   constructor (private http: Http) {}
 
-  private dashUrl = 'https://cyberworks3-api-scollins.c9users.io/api/v1/armalife/dashboard';
-
-  getDashboard (): Observable<Dashboard> {
-    return this.http.get(this.dashUrl)
+  getPlayer (id: number): Observable<Player> {
+    return this.http.get(this.getUrl(id))
       .map(this.extractData)
       .catch(this.handleError);
+  }
+
+  private getUrl(id: number) {
+    return 'https://cyberworks3-api-scollins.c9users.io/api/v1/armalife/player/' + id;
   }
   
   private extractData(res: Response) {
