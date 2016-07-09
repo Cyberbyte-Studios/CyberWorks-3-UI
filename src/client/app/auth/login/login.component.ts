@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
-import { ToastsManager } from "ng2-toastr/ng2-toastr";
-import { User } from "../models/user";
-import { UserService } from "./login.service";
+import { Component } from '@angular/core';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { User } from '../models/user';
+import { UserService } from './login.service';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +12,7 @@ import { UserService } from "./login.service";
 export class LoginComponent {
 
   errorMessage: string;
-  user = new User(null, null, null);
+  user = new User();
 
   constructor(private userService: UserService,
               private toastr: ToastsManager) {

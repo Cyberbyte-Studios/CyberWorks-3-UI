@@ -37,7 +37,16 @@ export class ProjectConfig extends SeedConfig {
     ];
 
     /* Add to or override NPM module configurations: */
-    //this.mergeObject( this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false } );
+    //this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
 
+    // (<any>this.SYSTEM_CONFIG_DEV.paths)['angular2-jwt'] =
+    //   `${this.APP_BASE}node_modules/angular2-jwt/angular2-jwt`;
+    this.SYSTEM_CONFIG_DEV.paths['angular2-jwt'] =
+      `${this.APP_BASE}node_modules/angular2-jwt/angular2-jwt`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['angular2-jwt'] = {
+      main: 'angular2-jwt.js',
+      defaultExtension : 'js'
+    }
   }
 }

@@ -1,21 +1,29 @@
-import { Injectable } from "@angular/core";
-import { Response, Http, Headers, RequestOptions } from "@angular/http";
-import { Observable } from "rxjs/Rx";
+import { Injectable } from '@angular/core';
+import { Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import { AuthHttp } from 'angular2-jwt/angular2-jwt';
 
 @Injectable()
 export class RequestService {
-  constructor(protected http: Http) {
+  private headers = new Headers({'Content-Type': 'application/json'});
+  private options = new RequestOptions({headers: this.headers});
+
+  constructor(protected http: AuthHttp) {
+
   }
 
   protected getBaseUrl() {
     return 'https://cyberworks3-api-scollins.c9users.io/api/v1/';
   }
 
-  public post(url: string, body: string) {
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
+  public get(url: string) {
+    return this.http.get(this.getBaseUrl() + url, this.options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
 
-    return this.http.post(this.getBaseUrl() + url, body, options)
+  public post(url: string, body: string) {
+    return this.http.post(this.getBaseUrl() + url, body, this.options)
       .map(this.extractData)
       .catch(this.handleError);
   }

@@ -1,5 +1,5 @@
-import { Licence } from "./license";
-import { Gear } from "./gear";
+import { Licence } from './license';
+import { Gear } from './gear';
 
 export class Player {
   id: number;
