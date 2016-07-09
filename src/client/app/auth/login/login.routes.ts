@@ -6,7 +6,6 @@ import { LoginComponent } from './index';
 export const LoginRoutes: RouterConfig = [
   {
     path: 'login',
-    component: LoginComponent,
-    directives: [ REACTIVE_FORM_DIRECTIVES, ROUTER_DIRECTIVES ]
+    component: LoginComponent
   },
 ];
