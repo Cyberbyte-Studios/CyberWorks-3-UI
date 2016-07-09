@@ -40,6 +40,7 @@
     "browser-sync": "^2.11.2",
     "codelyzer": "0.0.20",
     "colorguard": "^1.1.1",
+    "compression": "^1.6.2",
     "connect": "^3.4.1",
     "connect-history-api-fallback": "^1.2.0",
     "connect-livereload": "^0.5.3",
@@ -111,14 +112,14 @@
     "yargs": "^4.2.0"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.3",
-    "@angular/compiler": "2.0.0-rc.3",
-    "@angular/core": "2.0.0-rc.3",
-    "@angular/forms": "0.1.1",
-    "@angular/http": "2.0.0-rc.3",
-    "@angular/platform-browser": "2.0.0-rc.3",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.3",
-    "@angular/router": "3.0.0-alpha.7",
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "@angular/http": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/router": "3.0.0-beta.2",
     "angular2-jwt": "^0.1.16",
     "bootstrap": "^3.3.6",
     "chart.js": "^2.1.6",
@@ -132,7 +133,7 @@
     "ng2-toastr": "^0.2.0",
     "pace-progress": "^1.0.2",
     "rxjs": "5.0.0-beta.6",
-    "systemjs": "0.19.26",
+    "systemjs": "0.19.27",
     "zone.js": "^0.6.12"
   }
 }
