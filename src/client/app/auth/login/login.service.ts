@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { User } from '../models/user';
 import { RequestService } from '../../shared/services/request.service';
-import { AuthHttp } from 'angular2-jwt/angular2-jwt';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class UserService extends RequestService {
-  constructor(protected http: AuthHttp) {
+  constructor(protected http: Http) {
     super(http)
   }
 

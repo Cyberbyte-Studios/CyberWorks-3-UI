@@ -1,5 +1,4 @@
 import { join } from 'path';
-
 import { SeedConfig } from './seed.config';
 
 /**
@@ -36,6 +35,13 @@ export class ProjectConfig extends SeedConfig {
       {src: 'ng2-toastr/bundles/ng2-toastr.min.css', inject: true},
     ];
 
+    this.APP_ASSETS = [
+      ...this.APP_ASSETS,
+      {src: `${this.ASSETS_SRC}/scripts.js`, inject: true, vendor: false},
+    ];
+
+    this.ENABLE_SCSS = true;
+
     /* Add to or override NPM module configurations: */
     //this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
 
@@ -46,7 +52,7 @@ export class ProjectConfig extends SeedConfig {
 
     this.SYSTEM_BUILDER_CONFIG.packages['angular2-jwt'] = {
       main: 'angular2-jwt.js',
-      defaultExtension : 'js'
+      defaultExtension: 'js'
     }
   }
 }

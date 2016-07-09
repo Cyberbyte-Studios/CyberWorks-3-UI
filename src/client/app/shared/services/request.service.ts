@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Response, Headers, RequestOptions } from '@angular/http';
+import { Response, Headers, RequestOptions, Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { AuthHttp } from 'angular2-jwt/angular2-jwt';
 
@@ -8,7 +8,7 @@ export class RequestService {
   private headers = new Headers({'Content-Type': 'application/json'});
   private options = new RequestOptions({headers: this.headers});
 
-  constructor(protected http: AuthHttp) {
+  constructor(protected http: Http | AuthHttp) {
 
   }
 
