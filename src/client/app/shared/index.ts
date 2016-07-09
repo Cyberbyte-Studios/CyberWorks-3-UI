@@ -4,4 +4,5 @@
 export * from './navigation/index';
 export * from './topnavbar/index';
 export * from './footer/index';
+export * from './services/index';
 export * from './config/env.config';
