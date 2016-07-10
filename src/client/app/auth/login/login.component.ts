@@ -29,8 +29,8 @@ export class LoginComponent {
 
   successfulLogin(user: User) {
     this.user = user;
-    this.user.token = null;
     localStorage.setItem('id_token', user.token);
+    this.user.token = null;
     localStorage.setItem('user', JSON.stringify(this.user));
     this.toastr.success(user.token, 'Logged in');
   }

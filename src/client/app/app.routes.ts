@@ -1,6 +1,5 @@
 import { provideRouter, RouterConfig } from '@angular/router';
-import { AuthRoutes } from './auth/auth.routes';
-import { AuthGuard } from './auth/auth.guard';
+import { AuthRoutes, AuthGuard, LockGuard } from './auth/index';
 import { ArmaLifeRoutes } from './armalife/armalife.routes';
 
 const routes: RouterConfig = [
@@ -10,5 +9,6 @@ const routes: RouterConfig = [
 
 export const APP_ROUTER_PROVIDERS = [
   provideRouter(routes),
-  AuthGuard
+  AuthGuard,
+  LockGuard
 ];

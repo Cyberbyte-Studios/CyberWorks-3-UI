@@ -1,0 +1,16 @@
+<div class="lock-word animated fadeInDown">
+  <span class="first-word">LOCK</span><span>SCREEN</span>
+</div>
+<div class="middle-box text-center lockscreen animated fadeInDown">
+  <div>
+    <h3>{{ user?.name}}</h3>
+    <p>You have locked Cyberworks, please enter your pin to continue</p>
+    <form class="m-t" role="form" (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="******" required
+               [(ngModel)]="user.pin" name="pin" #name="ngModel">
+      </div>
+      <button type="submit" class="btn btn-primary block full-width" [disabled]="!userForm.form.valid">Unlock</button>
+    </form>
+  </div>
+</div>

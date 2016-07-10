@@ -4,5 +4,6 @@ export class User {
   public name: string;
   public role: string;
   public password: string;
+  public pin: string | boolean;
   public token: string;
 }
