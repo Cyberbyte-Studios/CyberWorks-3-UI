@@ -18,10 +18,15 @@ export class LifeDashboardComponent implements OnInit {
     this.getDashboard();
   }
 
+  gotDashboard(dashboard: Dashboard) {
+    this.dashboard = dashboard;
+    this.dashboard.percentage = this.dashboard.players / 100;
+  }
+
   getDashboard() {
     this.dashService.getDashboard()
       .subscribe(
-        dashboard => this.dashboard = dashboard,
+        dashboard => this.gotDashboard(dashboard),
         error => this.errorMessage = <any>error);
   }
 

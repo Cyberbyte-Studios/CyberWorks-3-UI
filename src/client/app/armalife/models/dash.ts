@@ -5,4 +5,10 @@ export class Dashboard {
   public vehicles: number;
   public houses: number;
   public players: number;
+  public playersLastWeek: number;
+  public cops: number;
+  public medics: number;
+  public admins: number;
+  public donators: number;
+  public percentage: number;
 }
