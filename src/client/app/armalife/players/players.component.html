@@ -1,0 +1,62 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Players</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <a class="fullscreen-link">
+              <i class="fa fa-expand"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li *ngFor="let limit of limits">
+                <a (click)="changeLimit(limit)">{{limit}}</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div>
+            <input #searchField (keyup.enter)="search=searchField.value">
+          </div>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>UID</th>
+              <th>Name</th>
+              <th>Player ID</th>
+              <th>Cash</th>
+              <th>Bank</th>
+              <th>Cop Level</th>
+              <th>Medic Level</th>
+              <th>Admin Level</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let player of players">
+              <td>{{ player.uid }}</td>
+              <td (click)="goToPlayer(player.uid)">{{ player.name }}</td>
+              <td>{{ player.playerid }}</td>
+              <td>{{ player.cash }}</td>
+              <td>{{ player.bank }}</td>
+              <td>{{ player.coplevel }}</td>
+              <td>{{ player.mediclevel }}</td>
+              <td>{{ player.adminlevel }}</td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

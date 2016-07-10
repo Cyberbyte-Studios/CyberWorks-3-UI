@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { Response, Headers, RequestOptions, Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { AuthHttp } from 'angular2-jwt/angular2-jwt';
+import { Paginate } from './paginate';
 
 @Injectable()
 export class RequestService {
   private headers = new Headers({'Content-Type': 'application/json'});
   private options = new RequestOptions({headers: this.headers});
+
+  public pagination: Paginate;
 
   constructor(protected http: Http | AuthHttp) {
 
@@ -28,9 +31,22 @@ export class RequestService {
       .catch(this.handleError);
   }
 
+  public next() {
+    return this.get(this.pagination.links.next);
+  }
+
+  public previous() {
+    return this.get(this.pagination.links.previous);
+  }
+
   protected extractData(res: Response) {
     let body = res.json();
     console.log(body);
+    if ("meta" in body) {
+      if ("pagination" in body.meta) {
+        
+      }
+    }
     return body.data || {};
   }
 

@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-4">
       <div class="tabs-container">
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#civInv"> Civ Inventory</a></li>
@@ -136,200 +136,33 @@
       </div>
     </div>
 
-    <div class="col-lg-6">
-      <div class="ibox">
-        <div class="ibox-title">
-          <h5>Small todo list</h5>
-          <div ibox-tools></div>
-        </div>
-        <div class="ibox-content">
-          <button *ngFor="let license of player?.civ_licenses" type="button" id="{{ license.id }}">{{ license.name }}
-          </button>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-lg-8">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="ibox float-e-margins">
-            <div class="ibox-title">
-              <h5>Inventory</h5>
-              <div ibox-tools></div>
-            </div>
-            <div class="ibox-content">
-              <table class="table table-hover no-margins">
-                <thead>
-                <tr>
-                  <th>Status</th>
-                  <th>Date</th>
-                  <th>User</th>
-                  <th>Value</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>
-                    <small>Pending...</small>
-                  </td>
-                  <td><i class="fa fa-clock-o"></i> 11:20pm</td>
-                  <td>Samantha</td>
-                  <td class="text-navy"><i class="fa fa-level-up"></i> 24%</td>
-                </tr>
-                <tr>
-                  <td><span class="label label-warning">Canceled</span></td>
-                  <td><i class="fa fa-clock-o"></i> 10:40am</td>
-                  <td>Monica</td>
-                  <td class="text-navy"><i class="fa fa-level-up"></i> 66%</td>
-                </tr>
-                <tr>
-                  <td>
-                    <small>Pending...</small>
-                  </td>
-                  <td><i class="fa fa-clock-o"></i> 01:30pm</td>
-                  <td>John</td>
-                  <td class="text-navy"><i class="fa fa-level-up"></i> 54%</td>
-                </tr>
-                <tr>
-                  <td>
-                    <small>Pending...</small>
-                  </td>
-                  <td><i class="fa fa-clock-o"></i> 02:20pm</td>
-                  <td>Agnes</td>
-                  <td class="text-navy"><i class="fa fa-level-up"></i> 12%</td>
-                </tr>
-                <tr>
-                  <td><span class="label label-primary">Completed</span></td>
-                  <td><i class="fa fa-clock-o"></i> 04:10am</td>
-                  <td>Amelia</td>
-                  <td class="text-navy"><i class="fa fa-level-up"></i> 66%</td>
-                </tr>
-                <tr>
-                  <td>
-                    <small>Pending...</small>
-                  </td>
-                  <td><i class="fa fa-clock-o"></i> 12:08am</td>
-                  <td>Damian</td>
-                  <td class="text-navy"><i class="fa fa-level-up"></i> 23%</td>
-                </tr>
-                </tbody>
-              </table>
+    <div class="col-lg-4">
+      <div class="tabs-container">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#civLicenses"> Civ Licenses</a></li>
+          <li class=""><a data-toggle="tab" href="#copLicenses">Cop Licenses</a></li>
+          <li class=""><a data-toggle="tab" href="#medLicenses">Medic Licenses</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="civLicenses" class="tab-pane active">
+            <div class="panel-body">
+              <button *ngFor="let license of player?.civ_licenses" class="btn" [ngClass]="activeLicense(license.status)"
+                      type="button" id="{{ license.id }}">{{ license.name }}
+              </button>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="ibox">
-            <div class="ibox-title">
-              <h5>Small todo list</h5>
-              <div ibox-tools></div>
-            </div>
-            <div class="ibox-content">
-              <ul class="todo-list m-t small-list">
-                <li>
-                  <checkbox ng-model="main.checkOne"></checkbox>
-                  <span class="m-l-xs">Buy a milk</span>
-                </li>
-                <li>
-                  <checkbox ng-model="check1"></checkbox>
-                  <span class="m-l-xs">Go to shop and find some products.</span>
-
-                </li>
-                <li>
-                  <checkbox ng-model="check2"></checkbox>
-                  <span class="m-l-xs">Send documents to Mike</span>
-                  <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 mins</small>
-                </li>
-                <li>
-                  <checkbox ng-model="main.checkTwo"></checkbox>
-                  <span class="m-l-xs">Go to the doctor dr Smith</span>
-                </li>
-                <li>
-                  <checkbox ng-model="check4"></checkbox>
-                  <span class="m-l-xs">Plan vacation</span>
-                </li>
-                <li>
-                  <checkbox ng-model="check5"></checkbox>
-                  <span class="m-l-xs">Create new stuff</span>
-                </li>
-                <li>
-                  <checkbox ng-model="check6"></checkbox>
-                  <span class="m-l-xs">Call to Anna for dinner</span>
-                </li>
-              </ul>
+          <div id="copLicenses" class="tab-pane">
+            <div class="panel-body">
+              <button *ngFor="let license of player?.cop_licenses" class="btn" [ngClass]="activeLicense(license.status)"
+                      type="button" id="{{ license.id }}">{{ license.name }}
+              </button>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="ibox float-e-margins">
-            <div class="ibox-title">
-              <h5>Transactions worldwide</h5>
-              <div ibox-tools></div>
-            </div>
-            <div class="ibox-content">
-
-              <div class="row">
-                <div class="col-lg-6">
-                  <table class="table table-hover margin bottom">
-                    <thead>
-                    <tr>
-                      <th style="width: 1%" class="text-center">No.</th>
-                      <th>Transaction</th>
-                      <th class="text-center">Date</th>
-                      <th class="text-center">Amount</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td class="text-center">1</td>
-                      <td> Security doors</td>
-                      <td class="text-center small">16 Jun 2014</td>
-                      <td class="text-center"><span class="label label-primary">$483.00</span></td>
-
-                    </tr>
-                    <tr>
-                      <td class="text-center">2</td>
-                      <td> Wardrobes
-                      </td>
-                      <td class="text-center small">10 Jun 2014</td>
-                      <td class="text-center"><span class="label label-primary">$327.00</span></td>
-
-                    </tr>
-                    <tr>
-                      <td class="text-center">3</td>
-                      <td> Set of tools
-                      </td>
-                      <td class="text-center small">12 Jun 2014</td>
-                      <td class="text-center"><span class="label label-warning">$125.00</span></td>
-
-                    </tr>
-                    <tr>
-                      <td class="text-center">4</td>
-                      <td> Panoramic pictures</td>
-                      <td class="text-center small">22 Jun 2013</td>
-                      <td class="text-center"><span class="label label-primary">$344.00</span></td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">5</td>
-                      <td>Phones</td>
-                      <td class="text-center small">24 Jun 2013</td>
-                      <td class="text-center"><span class="label label-primary">$235.00</span></td>
-                    </tr>
-                    <tr>
-                      <td class="text-center">6</td>
-                      <td>Monitors</td>
-                      <td class="text-center small">26 Jun 2013</td>
-                      <td class="text-center"><span class="label label-primary">$100.00</span></td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="col-lg-6" ng-controller="dashboardMap as map">
-                  <div vector-map style="height: 300px;" my-map-data="map.data"></div>
-                </div>
-              </div>
+          <div id="medLicenses" class="tab-pane">
+            <div class="panel-body">
+              <button *ngFor="let license of player?.med_licenses" class="btn" [ngClass]="activeLicense(license.status)"
+                      type="button" id="{{ license.id }}">{{ license.name }}
+              </button>
             </div>
           </div>
         </div>

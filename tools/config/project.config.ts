@@ -33,6 +33,7 @@ export class ProjectConfig extends SeedConfig {
       {src: 'chart.js/dist/Chart.bundle.min.js', inject: true},
       {src: 'ng2-toastr/bundles/ng2-toastr.min.js', inject: true},
       {src: 'ng2-toastr/bundles/ng2-toastr.min.css', inject: true},
+      {src: 'font-awesome/css/font-awesome.min.css', inject: true},
     ];
 
     this.APP_ASSETS = [

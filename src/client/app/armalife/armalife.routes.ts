@@ -1,5 +1,5 @@
 import { RouterConfig } from '@angular/router';
-import { PlayerComponent, LifeDashboardComponent } from './index';
+import { PlayerComponent, LifeDashboardComponent, PlayersComponent } from './index';
 import { AuthGuard } from '../auth/auth.guard';
 
 export const ArmaLifeRoutes: RouterConfig = [
@@ -11,6 +11,11 @@ export const ArmaLifeRoutes: RouterConfig = [
   {
     path: 'life/player/:id',
     component: PlayerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'life/players',
+    component: PlayersComponent,
     canActivate: [AuthGuard]
   },
 ];

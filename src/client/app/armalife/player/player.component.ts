@@ -26,6 +26,13 @@ export class PlayerComponent implements OnInit, OnDestroy {
               private playerService: PlayerService) {
   }
 
+  activeLicense(status: number) {
+    if (status) {
+      return 'btn-primary';
+    }
+    return 'btn-danger';
+  }
+
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       let id = +params['id'];
