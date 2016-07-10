@@ -63,9 +63,15 @@
         <div class="ibox-content">
           <div class="row">
             <div class="col-lg-9">
-              <div class="flot-chart" ng-controller="dashboardFlotTwo as chart">
-                <div flot class="flot-chart-content" dataset="chart.flotData" options="chart.flotOptions"></div>
-              </div>
+              <base-chart class="chart"
+                          [datasets]="signupData"
+                          [labels]="signupDates"
+                          [options]="lineChartOptions"
+                          [colors]="lineChartColours"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"></base-chart>
             </div>
             <div class="col-lg-3">
               <ul class="stat-list">

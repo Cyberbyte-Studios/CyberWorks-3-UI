@@ -11,4 +11,5 @@ export class Dashboard {
   public admins: number;
   public donators: number;
   public percentage: number;
+  public signups: any;
 }
